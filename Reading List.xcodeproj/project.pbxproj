@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156D9A6A26B8687E00BECE16 /* Baskerville.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 156D9A6926B8687D00BECE16 /* Baskerville.ttc */; };
 		E1F76B4D26B84860008EC9F9 /* Reading_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B4C26B84860008EC9F9 /* Reading_ListApp.swift */; };
 		E1F76B4F26B84860008EC9F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B4E26B84860008EC9F9 /* ContentView.swift */; };
 		E1F76B5126B84861008EC9F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F76B5026B84861008EC9F9 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		156D9A6926B8687D00BECE16 /* Baskerville.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Baskerville.ttc; sourceTree = "<group>"; };
 		E1F76B4926B84860008EC9F9 /* Reading List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reading List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F76B4C26B84860008EC9F9 /* Reading_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading_ListApp.swift; sourceTree = "<group>"; };
 		E1F76B4E26B84860008EC9F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				E1F76B4C26B84860008EC9F9 /* Reading_ListApp.swift */,
 				E1F76B4E26B84860008EC9F9 /* ContentView.swift */,
+				156D9A6926B8687D00BECE16 /* Baskerville.ttc */,
 				FBD1F57F26B8655C009EF964 /* TitleView.swift */,
 				E1F76B5026B84861008EC9F9 /* Assets.xcassets */,
 				E1F76B5526B84861008EC9F9 /* Info.plist */,
@@ -238,6 +241,7 @@
 			files = (
 				E1F76B5426B84861008EC9F9 /* Preview Assets.xcassets in Resources */,
 				E1F76B5126B84861008EC9F9 /* Assets.xcassets in Resources */,
+				156D9A6A26B8687E00BECE16 /* Baskerville.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
