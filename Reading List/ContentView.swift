@@ -18,3 +18,11 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct CustomColor {
+    static let myTan = Color("myTan")
+    static let myGreen = Color("myGreen")
+    static let myBrown = Color("myBrown")
+    static let myBlue = Color("myBlue")
+    static let myPurple = Color("myPurple")
+}
