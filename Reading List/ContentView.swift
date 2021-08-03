@@ -51,3 +51,4 @@ struct CustomColor {
     static let myBlue = Color("myBlue")
     static let myPurple = Color("myPurple")
 }
+

@@ -18,3 +18,10 @@ struct FutureList_Previews: PreviewProvider {
         FutureList()
     }
 }
+
+struct BookItem: Identifiable, Codable {
+    var id = UUID()
+    var title = String()
+    var author = String()
+    var pages = String()
+}
