@@ -8,8 +8,15 @@
 import SwiftUI
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            HStack {
+                Image("Bookworm Logo")
+                    .resizable()
+                    .frame(width: 300, height: 100, alignment: .leading)
+                    .padding()
+                Spacer()
+            }
+        }
     }
 }
 
