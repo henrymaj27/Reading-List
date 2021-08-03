@@ -14,7 +14,6 @@
 		E1F76B5426B84861008EC9F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F76B5326B84861008EC9F9 /* Preview Assets.xcassets */; };
 		E1F76B5F26B84861008EC9F9 /* Reading_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B5E26B84861008EC9F9 /* Reading_ListTests.swift */; };
 		E1F76B6A26B84861008EC9F9 /* Reading_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B6926B84861008EC9F9 /* Reading_ListUITests.swift */; };
-		FBD1F58026B8655C009EF964 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F57F26B8655C009EF964 /* TitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		E1F76B6526B84861008EC9F9 /* Reading ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reading ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F76B6926B84861008EC9F9 /* Reading_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading_ListUITests.swift; sourceTree = "<group>"; };
 		E1F76B6B26B84861008EC9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBD1F57F26B8655C009EF964 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 				E1F76B4C26B84860008EC9F9 /* Reading_ListApp.swift */,
 				E1F76B4E26B84860008EC9F9 /* ContentView.swift */,
 				156D9A6926B8687D00BECE16 /* Baskerville.ttc */,
-				FBD1F57F26B8655C009EF964 /* TitleView.swift */,
 				E1F76B5026B84861008EC9F9 /* Assets.xcassets */,
 				E1F76B5526B84861008EC9F9 /* Info.plist */,
 				E1F76B5226B84861008EC9F9 /* Preview Content */,
@@ -268,7 +265,6 @@
 			files = (
 				E1F76B4F26B84860008EC9F9 /* ContentView.swift in Sources */,
 				E1F76B4D26B84860008EC9F9 /* Reading_ListApp.swift in Sources */,
-				FBD1F58026B8655C009EF964 /* TitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
