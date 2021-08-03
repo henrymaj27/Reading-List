@@ -8,13 +8,19 @@
 import SwiftUI
 struct ContentView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Image("Bookworm Logo")
-                    .resizable()
-                    .frame(width: 300, height: 100, alignment: .leading)
-                    .padding()
-                Spacer()
+        ZStack {
+            CustomColor.myGreen
+                .ignoresSafeArea()
+            VStack {
+                HStack {
+                    Image(systemName: "text.justify")
+                        .font(Font.system(.title))
+                        .padding()
+                        .foregroundColor(CustomColor.myBlue)
+                    Image("Bookworm Logo")
+                        .resizable()
+                        .frame(width: 270, height: 90)
+                }
             }
         }
     }
