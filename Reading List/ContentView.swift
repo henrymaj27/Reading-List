@@ -21,6 +21,7 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 270, height: 90)
                 }
+                
             }
         }
     }
