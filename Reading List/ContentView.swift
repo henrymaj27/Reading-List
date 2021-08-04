@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct ContentView: View {
+    @ObservedObject var bookList = BookList()
     @State private var menu = false
     var body: some View {
         NavigationView {
@@ -27,9 +28,17 @@ struct ContentView: View {
                             .frame(width: 270, height: 90)
                     }
                     HStack {
-                        NavigationLink("Add Book", destination: FutureList())
-                            .padding(.leading, 35)
-                            .foregroundColor(CustomColor.myBlue)
+                        NavigationLink(
+                            destination: ZStack{
+                                Text("Hello")
+                            },
+                            label: {
+                                Text("+ Add Book")
+                                    .font(.title2)
+                            }
+                        )
+                        .padding(.leading, 35)
+                        .foregroundColor(CustomColor.myBlue)
                         Spacer()
                     }
                     Spacer()
@@ -53,14 +62,42 @@ struct ContentView: View {
                                 Spacer()
                                 Group {
                                     NavigationLink(
-                                        destination: ZStack{
-                                            Text("Hello")
-                                        },
+                                        destination:
+                                            NavigationView {
+                                                ZStack{
+                                                    List {
+                                                        ForEach(bookList.items) { item in
+                                                            HStack {
+                                                                Text(item.title)
+                                                                    .font(.title2)
+                                                                Spacer()
+                                                                Text("\(item.author)    \(item.pages) pages")
+                                                            }
+                                                                       }
+                                                        .onMove(perform: { indices, newOffset in
+                                                            bookList.items.move(fromOffsets: indices, toOffset: newOffset)
+                                                        })
+                                                        .onDelete(perform: { indexSet in
+                                                            bookList.items.remove(atOffsets: indexSet)
+                                                        })
+                                                    }
+                                                    .navigationBarItems(leading: EditButton())
+                                                }
+                                            },
                                         label: {
                                             Text("Future Reads")
                                         }
                                     )
-                                    NavigationLink("Previous Reads", destination: FutureList())
+                                    NavigationLink(
+                                        destination: ZStack{
+                                            List {
+                                                
+                                            }
+                                        },
+                                        label: {
+                                            Text("Previous Reads")
+                                        }
+                                    )
                                 }
                                 .foregroundColor(CustomColor.myBlue)
                                 .padding(5)
@@ -93,7 +130,7 @@ struct CustomColor {
     static let myPurple = Color("myPurple")
 }
 
-struct BookItem: Identifiable, Codable {
+struct bookItem: Identifiable, Codable {
     var id = UUID()
     var title = String()
     var author = String()
