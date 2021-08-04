@@ -32,26 +32,22 @@ struct ContentView: View {
                         ZStack {
                             CustomColor.myPurple
                                 .ignoresSafeArea()
-                                .frame(width:240)
+                                .frame(width:180)
                             VStack {
-                                HStack {
-                                    Image(systemName: "multiply")
-                                        .font(.system(size: 30, weight: .semibold))
-                                        .foregroundColor(CustomColor.myBlue)
-                                }
-                                HStack {
+                                Image(systemName: "multiply")
+                                    .font(.system(size: 30, weight: .semibold))
+                                    .foregroundColor(CustomColor.myBlue)
+                                Spacer()
+                                Group {
                                     NavigationLink("Future Reads", destination: FutureList())
-                                        .foregroundColor(CustomColor.myBrown)
-                                        .padding(10)
-                                        .background(CustomColor.myBlue)
-                                        .cornerRadius(7)
+                                    NavigationLink("Previous Reads", destination: FutureList())
                                 }
-                                NavigationLink("Previous Reads", destination: FutureList())
-                                    .foregroundColor(CustomColor.myBrown)
-                                    .padding(10)
-                                    .background(CustomColor.myBlue)
-                                    .cornerRadius(7)
+                                .foregroundColor(CustomColor.myBrown)
+                                .padding(10)
+                                .background(CustomColor.myBlue)
+                                .cornerRadius(7)
                             }
+                            .padding(.bottom, 300)
                         }
                         Spacer()
                     }
