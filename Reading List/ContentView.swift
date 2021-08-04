@@ -36,7 +36,7 @@ struct ContentView: View {
                         ZStack {
                             CustomColor.myPurple
                                 .ignoresSafeArea()
-                                .frame(width:180)
+                                .frame(width:140)
                             VStack {
                                 Image(systemName: "multiply")
                                     .font(.system(size: 30, weight: .semibold))
@@ -50,12 +50,12 @@ struct ContentView: View {
                                     NavigationLink("Previous Reads", destination: FutureList())
                                 }
                                 .foregroundColor(CustomColor.myBrown)
-                                .padding(10)
+                                .padding(5)
                                 .background(CustomColor.myBlue)
                                 .cornerRadius(7)
                             }
                             .padding(.top, 25)
-                            .padding(.bottom, 300)
+                            .padding(.bottom, 490)
                         }
                         Spacer()
                     }
