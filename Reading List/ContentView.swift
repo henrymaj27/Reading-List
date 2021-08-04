@@ -8,6 +8,7 @@
 import SwiftUI
 struct ContentView: View {
     @ObservedObject var bookList = BookList()
+    @State private var showingAddBookView = false
     @State private var menu = false
     var body: some View {
         NavigationView {
@@ -111,6 +112,9 @@ struct ContentView: View {
                     }
                 }
                 .opacity(menu ? 1 : 0)
+                .sheet(isPresented: $showingAddBookView, content: {
+                               AddBookView(bookList: bookList)
+                           })
             }
         }
     }
