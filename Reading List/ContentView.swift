@@ -26,6 +26,12 @@ struct ContentView: View {
                             .resizable()
                             .frame(width: 270, height: 90)
                     }
+                    HStack {
+                        NavigationLink("Add Book", destination: FutureList())
+                            .padding(.leading, 35)
+                            .foregroundColor(CustomColor.myBlue)
+                        Spacer()
+                    }
                     Spacer()
                 }
                 ZStack {
@@ -34,28 +40,35 @@ struct ContentView: View {
                         .opacity(0.5)
                     HStack {
                         ZStack {
-                            CustomColor.myPurple
+                            CustomColor.myTan
                                 .ignoresSafeArea()
-                                .frame(width:140)
+                                .frame(width:150)
                             VStack {
                                 Image(systemName: "multiply")
                                     .font(.system(size: 30, weight: .semibold))
-                                    .foregroundColor(CustomColor.myBlue)
+                                    .foregroundColor(CustomColor.myBrown)
                                     .onTapGesture {
                                         menu = false
                                     }
                                 Spacer()
                                 Group {
-                                    NavigationLink("Future Reads", destination: FutureList())
+                                    NavigationLink(
+                                        destination: ZStack{
+                                            Text("Hello")
+                                        },
+                                        label: {
+                                            Text("Future Reads")
+                                        }
+                                    )
                                     NavigationLink("Previous Reads", destination: FutureList())
                                 }
-                                .foregroundColor(CustomColor.myBrown)
+                                .foregroundColor(CustomColor.myBlue)
                                 .padding(5)
-                                .background(CustomColor.myBlue)
+                                .background(CustomColor.myBrown)
                                 .cornerRadius(7)
                             }
-                            .padding(.top, 25)
-                            .padding(.bottom, 490)
+                            .padding(.top, 120)
+                            .padding(.bottom, 400)
                         }
                         Spacer()
                     }
@@ -80,3 +93,9 @@ struct CustomColor {
     static let myPurple = Color("myPurple")
 }
 
+struct BookItem: Identifiable, Codable {
+    var id = UUID()
+    var title = String()
+    var author = String()
+    var pages = String()
+}
