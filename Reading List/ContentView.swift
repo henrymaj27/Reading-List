@@ -29,15 +29,10 @@ struct ContentView: View {
                             .frame(width: 270, height: 90)
                     }
                     HStack {
-                        NavigationLink(
-                            destination: ZStack{
-                                Text("Hello")
-                            },
-                            label: {
-                                Text("+ Add Book")
-                                    .font(.title2)
-                            }
-                        )
+                        Button(action: {
+                                showingAddBookView = true}) {
+                            Image(systemName: "plus")
+                        }
                         .padding(.leading, 35)
                         .foregroundColor(CustomColor.myBlue)
                         Spacer()
@@ -74,7 +69,7 @@ struct ContentView: View {
                                                                 Spacer()
                                                                 Text("\(item.author)    \(item.pages) pages")
                                                             }
-                                                                       }
+                                                        }
                                                         .onMove(perform: { indices, newOffset in
                                                             bookList.items.move(fromOffsets: indices, toOffset: newOffset)
                                                         })
@@ -113,8 +108,8 @@ struct ContentView: View {
                 }
                 .opacity(menu ? 1 : 0)
                 .sheet(isPresented: $showingAddBookView, content: {
-                               AddBookView(bookList: bookList)
-                           })
+                    AddBookView(bookList: bookList)
+                })
             }
         }
     }
