@@ -130,7 +130,7 @@ struct CustomColor {
     static let myPurple = Color("myPurple")
 }
 
-struct bookItem: Identifiable, Codable {
+struct BookItem: Identifiable, Codable {
     var id = UUID()
     var title = String()
     var author = String()
