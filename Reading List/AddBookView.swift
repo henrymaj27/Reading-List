@@ -23,7 +23,7 @@ struct AddBookView: View {
                     .navigationBarTitle("Add New To-Do Item", displayMode: .inline)
                     .navigationBarItems(trailing: Button("Save") {
                                     if title.count > 0 && author.count > 0 {
-                                        let item = bookItem(id: UUID(), title: title,
+                                        let item = BookItem(id: UUID(), title: title,
                                                             author: author, pages: pages)
                                         bookList.items.append(item)
                                         presentationMode.wrappedValue.dismiss()
