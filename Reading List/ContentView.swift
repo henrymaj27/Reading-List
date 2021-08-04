@@ -24,14 +24,37 @@ struct ContentView: View {
                     }
                     
                 }
-                HStack {
-                    ZStack {
-                        CustomColor.myPurple
-                            .ignoresSafeArea()
-                            .frame(width:200)
-                        NavigationLink("Next", destination: FutureList())
+                ZStack {
+                    Color.black
+                        .ignoresSafeArea()
+                        .opacity(0.5)
+                    HStack {
+                        ZStack {
+                            CustomColor.myPurple
+                                .ignoresSafeArea()
+                                .frame(width:240)
+                            VStack {
+                                HStack {
+                                    Image(systemName: "multiply")
+                                        .font(.system(size: 30, weight: .semibold))
+                                        .foregroundColor(CustomColor.myBlue)
+                                }
+                                HStack {
+                                    NavigationLink("Future Reads", destination: FutureList())
+                                        .foregroundColor(CustomColor.myBrown)
+                                        .padding(10)
+                                        .background(CustomColor.myBlue)
+                                        .cornerRadius(7)
+                                }
+                                NavigationLink("Previous Reads", destination: FutureList())
+                                    .foregroundColor(CustomColor.myBrown)
+                                    .padding(10)
+                                    .background(CustomColor.myBlue)
+                                    .cornerRadius(7)
+                            }
+                        }
+                        Spacer()
                     }
-                    Spacer()
                 }
             }
         }
