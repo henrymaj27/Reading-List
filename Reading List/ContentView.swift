@@ -7,6 +7,7 @@
 
 import SwiftUI
 struct ContentView: View {
+    @State private var menu = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,11 +19,14 @@ struct ContentView: View {
                             .font(Font.system(.title))
                             .padding()
                             .foregroundColor(CustomColor.myBlue)
+                            .onTapGesture {
+                                menu = true
+                            }
                         Image("Bookworm Logo")
                             .resizable()
                             .frame(width: 270, height: 90)
                     }
-                    
+                    Spacer()
                 }
                 ZStack {
                     Color.black
@@ -37,6 +41,9 @@ struct ContentView: View {
                                 Image(systemName: "multiply")
                                     .font(.system(size: 30, weight: .semibold))
                                     .foregroundColor(CustomColor.myBlue)
+                                    .onTapGesture {
+                                        menu = false
+                                    }
                                 Spacer()
                                 Group {
                                     NavigationLink("Future Reads", destination: FutureList())
@@ -47,11 +54,13 @@ struct ContentView: View {
                                 .background(CustomColor.myBlue)
                                 .cornerRadius(7)
                             }
+                            .padding(.top, 25)
                             .padding(.bottom, 300)
                         }
                         Spacer()
                     }
                 }
+                .opacity(menu ? 1 : 0)
             }
         }
     }
