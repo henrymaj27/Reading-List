@@ -15,6 +15,7 @@
 		E1F76B5F26B84861008EC9F9 /* Reading_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B5E26B84861008EC9F9 /* Reading_ListTests.swift */; };
 		E1F76B6A26B84861008EC9F9 /* Reading_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F76B6926B84861008EC9F9 /* Reading_ListUITests.swift */; };
 		FBBB43AC26B9B1900077FB6B /* FutureList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB43AB26B9B1900077FB6B /* FutureList.swift */; };
+		FBBB43AE26B9B9410077FB6B /* AddFutureBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBB43AD26B9B9410077FB6B /* AddFutureBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E1F76B6926B84861008EC9F9 /* Reading_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reading_ListUITests.swift; sourceTree = "<group>"; };
 		E1F76B6B26B84861008EC9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBBB43AB26B9B1900077FB6B /* FutureList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureList.swift; sourceTree = "<group>"; };
+		FBBB43AD26B9B9410077FB6B /* AddFutureBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFutureBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				E1F76B4C26B84860008EC9F9 /* Reading_ListApp.swift */,
 				E1F76B4E26B84860008EC9F9 /* ContentView.swift */,
 				FBBB43AB26B9B1900077FB6B /* FutureList.swift */,
+				FBBB43AD26B9B9410077FB6B /* AddFutureBook.swift */,
 				156D9A6926B8687D00BECE16 /* Baskerville.ttc */,
 				E1F76B5026B84861008EC9F9 /* Assets.xcassets */,
 				E1F76B5526B84861008EC9F9 /* Info.plist */,
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1F76B4F26B84860008EC9F9 /* ContentView.swift in Sources */,
+				FBBB43AE26B9B9410077FB6B /* AddFutureBook.swift in Sources */,
 				FBBB43AC26B9B1900077FB6B /* FutureList.swift in Sources */,
 				E1F76B4D26B84860008EC9F9 /* Reading_ListApp.swift in Sources */,
 			);
