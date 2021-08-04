@@ -32,6 +32,7 @@ struct ContentView: View {
                         Button(action: {
                                 showingAddBookView = true}) {
                             Image(systemName: "plus")
+                            Text("Add Book")
                         }
                         .padding(.leading, 35)
                         .foregroundColor(CustomColor.myBlue)
