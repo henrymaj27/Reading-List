@@ -20,7 +20,7 @@ struct AddBookView: View {
                         TextField("Author", text: $author)
                         TextField("Pages", text: $pages)
                     }
-                    .navigationBarTitle("Add New To-Do Item", displayMode: .inline)
+                    .navigationBarTitle("Add New To-Do Item", displayMode: .inline).font(Font.custom("Baskerville", size: 20))
                     .navigationBarItems(trailing: Button("Save") {
                                     if title.count > 0 && author.count > 0 {
                                         let item = BookItem(id: UUID(), title: title,

@@ -101,8 +101,8 @@ struct ContentView: View {
                                 .background(CustomColor.myBrown)
                                 .cornerRadius(7)
                             }
-                            .padding(.top, 120)
-                            .padding(.bottom, 400)
+                            .padding(.top, 50)
+                            .padding(.bottom, 480)
                         }
                         Spacer()
                     }
