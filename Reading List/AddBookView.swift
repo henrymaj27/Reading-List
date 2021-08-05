@@ -14,7 +14,7 @@ struct AddBookView: View {
     @State private var pages = ""
     @State private var time = ""
     @Environment(\.presentationMode) var presentationMode
-    static let times = ["Previous", "Future"]
+    static let times = ["Past", "Future"]
     var body: some View {
         NavigationView {
             Form {

@@ -94,7 +94,7 @@ struct ContentView: View {
                                                 ZStack{
                                                     List {
                                                         ForEach(bookList.items) { item in
-                                                            if item.time == "Previous" {
+                                                            if item.time == "Past" {
                                                             HStack {
                                                                 Text(item.title)
                                                                     .font(.title2)
@@ -110,12 +110,12 @@ struct ContentView: View {
                                                             bookList.items.remove(atOffsets: indexSet)
                                                         })
                                                     }
-                                                    .navigationBarTitle("Previous Reads", displayMode: .inline)
+                                                    .navigationBarTitle("Past Reads", displayMode: .inline)
                                                     .navigationBarItems(trailing: EditButton())
                                                 }
                                             },
                                         label: {
-                                            Text("Previous Reads").font(Font.custom("Baskerville", size: 22))
+                                            Text("Past Reads").font(Font.custom("Baskerville", size: 22))
                                         }
                                     )
                                 }
