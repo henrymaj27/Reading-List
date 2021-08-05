@@ -64,11 +64,13 @@ struct ContentView: View {
                                                 ZStack{
                                                     List {
                                                         ForEach(bookList.items) { item in
-                                                            HStack {
-                                                                Text(item.title)
-                                                                    .font(.title2)
-                                                                Spacer()
-                                                                Text("\(item.author)    \(item.pages) pages")
+                                                            if item.time == "Future" {
+                                                                HStack {
+                                                                    Text(item.title)
+                                                                        .font(.title2)
+                                                                    Spacer()
+                                                                    Text("\(item.author)    \(item.pages) pages")
+                                                                }
                                                             }
                                                         }
                                                         .onMove(perform: { indices, newOffset in
@@ -92,11 +94,13 @@ struct ContentView: View {
                                                 ZStack{
                                                     List {
                                                         ForEach(bookList.items) { item in
+                                                            if item.time == "Previous" {
                                                             HStack {
                                                                 Text(item.title)
                                                                     .font(.title2)
                                                                 Spacer()
                                                                 Text("\(item.author)    \(item.pages) pages")
+                                                            }
                                                             }
                                                         }
                                                         .onMove(perform: { indices, newOffset in
@@ -106,7 +110,7 @@ struct ContentView: View {
                                                             bookList.items.remove(atOffsets: indexSet)
                                                         })
                                                     }
-                                                    .navigationBarTitle("Future Reads", displayMode: .inline)
+                                                    .navigationBarTitle("Previous Reads", displayMode: .inline)
                                                     .navigationBarItems(trailing: EditButton())
                                                 }
                                             },
