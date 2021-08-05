@@ -19,8 +19,11 @@ struct AddBookView: View {
         NavigationView {
             Form {
                 TextField("Title", text: $title)
+                    .font(Font.custom("Baskerville", size: 20))
                 TextField("Author", text: $author)
+                    .font(Font.custom("Baskerville", size: 20))
                 TextField("Pages", text: $pages)
+                    .font(Font.custom("Baskerville", size: 20))
                 Picker("When are you reading?", selection: $time) {
                     ForEach(Self.times, id: \.self) { time in
                         Text(time)
