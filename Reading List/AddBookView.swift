@@ -32,8 +32,7 @@ struct AddBookView: View {
                 .navigationBarTitle("Add New Book", displayMode: .inline).font(Font.custom("Baskerville", size: 20))
                 .navigationBarItems(trailing: Button("Save") {
                     if title.count > 0 && time.count > 0 {
-                        let item = BookItem(id: UUID(), title: title,
-                                            author: author, pages: pages)
+                        let item = BookItem(id: UUID(), title: title, author: author, pages: pages, time: time)
                         bookList.items.append(item)
                         presentationMode.wrappedValue.dismiss()
                     }
