@@ -32,7 +32,7 @@ struct ContentView: View {
                         Button(action: {
                                 showingAddBookView = true}) {
                             Image(systemName: "plus")
-                            Text("Add Book")
+                            Text("Add Book").font(Font.custom("Baskerville", size: 24))
                         }
                         .padding(.leading, 35)
                         .foregroundColor(CustomColor.myBlue)
@@ -82,7 +82,7 @@ struct ContentView: View {
                                                 }
                                             },
                                         label: {
-                                            Text("Future Reads")
+                                            Text("Future Reads").font(Font.custom("Baskerville", size: 22))
                                         }
                                     )
                                     NavigationLink(
@@ -92,7 +92,7 @@ struct ContentView: View {
                                             }
                                         },
                                         label: {
-                                            Text("Previous Reads")
+                                            Text("Previous Reads").font(Font.custom("Baskerville", size: 20))
                                         }
                                     )
                                 }
