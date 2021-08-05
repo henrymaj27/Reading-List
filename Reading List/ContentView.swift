@@ -48,7 +48,7 @@ struct ContentView: View {
                         ZStack {
                             CustomColor.myTan
                                 .ignoresSafeArea()
-                                .frame(width:150)
+                                .frame(width:160)
                             VStack {
                                 Image(systemName: "multiply")
                                     .font(.system(size: 30, weight: .semibold))
@@ -87,13 +87,31 @@ struct ContentView: View {
                                         }
                                     )
                                     NavigationLink(
-                                        destination: ZStack{
-                                            List {
-                                                
-                                            }
-                                        },
+                                        destination:
+                                            NavigationView {
+                                                ZStack{
+                                                    List {
+                                                        ForEach(bookList.items) { item in
+                                                            HStack {
+                                                                Text(item.title)
+                                                                    .font(.title2)
+                                                                Spacer()
+                                                                Text("\(item.author)    \(item.pages) pages")
+                                                            }
+                                                        }
+                                                        .onMove(perform: { indices, newOffset in
+                                                            bookList.items.move(fromOffsets: indices, toOffset: newOffset)
+                                                        })
+                                                        .onDelete(perform: { indexSet in
+                                                            bookList.items.remove(atOffsets: indexSet)
+                                                        })
+                                                    }
+                                                    .navigationBarTitle("Future Reads", displayMode: .inline)
+                                                    .navigationBarItems(trailing: EditButton())
+                                                }
+                                            },
                                         label: {
-                                            Text("Previous Reads").font(Font.custom("Baskerville", size: 20))
+                                            Text("Previous Reads").font(Font.custom("Baskerville", size: 22))
                                         }
                                     )
                                 }
