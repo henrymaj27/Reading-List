@@ -26,7 +26,7 @@ struct AddBookView: View {
                         Text(time)
                     }
                 }
-                .navigationBarTitle("Add New To-Do Item", displayMode: .inline).font(Font.custom("Baskerville", size: 20))
+                .navigationBarTitle("Add New Book", displayMode: .inline).font(Font.custom("Baskerville", size: 20))
                 .navigationBarItems(trailing: Button("Save") {
                     if title.count > 0 && time.count > 0 {
                         let item = BookItem(id: UUID(), title: title,
