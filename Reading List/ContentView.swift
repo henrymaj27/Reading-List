@@ -66,10 +66,18 @@ struct ContentView: View {
                                                         ForEach(bookList.items) { item in
                                                             if item.time == "Future" {
                                                                 HStack {
-                                                                    Text(item.title)
-                                                                        .font(.title2)
+                                                                    VStack(alignment: .leading) {
+                                                                        Text(item.title)
+                                                                            .font(Font.custom("Baskerville", size: 25))
+                                                                            .foregroundColor(CustomColor.myPurple)
+                                                                        Text(item.author)
+                                                                            .font(Font.custom("Baskerville", size: 20))
+                                                                            .foregroundColor(CustomColor.myGreen)
+                                                                    }
                                                                     Spacer()
-                                                                    Text("\(item.author)    \(item.pages) pages")
+                                                                    Text("\(item.pages) pages")
+                                                                        .font(Font.custom("Baskerville", size: 20))
+                                                                        .foregroundColor(CustomColor.myGreen)
                                                                 }
                                                             }
                                                         }
@@ -82,6 +90,7 @@ struct ContentView: View {
                                                     }
                                                     .navigationBarTitle("Future Reads", displayMode: .inline)
                                                     .navigationBarItems(trailing: EditButton())
+                                                    .foregroundColor(CustomColor.myBrown)
                                                 }
                                             },
                                         label: {
@@ -95,12 +104,20 @@ struct ContentView: View {
                                                     List {
                                                         ForEach(bookList.items) { item in
                                                             if item.time == "Past" {
-                                                            HStack {
-                                                                Text(item.title)
-                                                                    .font(.title2)
-                                                                Spacer()
-                                                                Text("\(item.author)    \(item.pages) pages")
-                                                            }
+                                                                HStack {
+                                                                    VStack(alignment: .leading) {
+                                                                        Text(item.title)
+                                                                            .font(Font.custom("Baskerville", size: 25))
+                                                                            .foregroundColor(CustomColor.myPurple)
+                                                                        Text(item.author)
+                                                                            .font(Font.custom("Baskerville", size: 20))
+                                                                            .foregroundColor(CustomColor.myGreen)
+                                                                    }
+                                                                    Spacer()
+                                                                    Text("\(item.pages) pages")
+                                                                        .font(Font.custom("Baskerville", size: 20))
+                                                                        .foregroundColor(CustomColor.myGreen)
+                                                                }
                                                             }
                                                         }
                                                         .onMove(perform: { indices, newOffset in
@@ -112,6 +129,7 @@ struct ContentView: View {
                                                     }
                                                     .navigationBarTitle("Past Reads", displayMode: .inline)
                                                     .navigationBarItems(trailing: EditButton())
+                                                    .foregroundColor(CustomColor.myBrown)
                                                 }
                                             },
                                         label: {
