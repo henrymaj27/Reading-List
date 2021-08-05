@@ -8,6 +8,7 @@
 import SwiftUI
 struct ContentView: View {
     @ObservedObject var bookList = BookList()
+    @State private var showingAddBookView = false
     @State private var menu = false
     var body: some View {
         NavigationView {
@@ -28,15 +29,11 @@ struct ContentView: View {
                             .frame(width: 270, height: 90)
                     }
                     HStack {
-                        NavigationLink(
-                            destination: ZStack{
-                                Text("Hello")
-                            },
-                            label: {
-                                Text("+ Add Book")
-                                    .font(.title2)
-                            }
-                        )
+                        Button(action: {
+                                showingAddBookView = true}) {
+                            Image(systemName: "plus")
+                            Text("Add Book")
+                        }
                         .padding(.leading, 35)
                         .foregroundColor(CustomColor.myBlue)
                         Spacer()
@@ -73,7 +70,7 @@ struct ContentView: View {
                                                                 Spacer()
                                                                 Text("\(item.author)    \(item.pages) pages")
                                                             }
-                                                                       }
+                                                        }
                                                         .onMove(perform: { indices, newOffset in
                                                             bookList.items.move(fromOffsets: indices, toOffset: newOffset)
                                                         })
@@ -111,6 +108,9 @@ struct ContentView: View {
                     }
                 }
                 .opacity(menu ? 1 : 0)
+                .sheet(isPresented: $showingAddBookView, content: {
+                    AddBookView(bookList: bookList)
+                })
             }
         }
     }
@@ -130,7 +130,7 @@ struct CustomColor {
     static let myPurple = Color("myPurple")
 }
 
-struct bookItem: Identifiable, Codable {
+struct BookItem: Identifiable, Codable {
     var id = UUID()
     var title = String()
     var author = String()

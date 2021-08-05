@@ -12,6 +12,7 @@ struct AddBookView: View {
         @State private var title = ""
         @State private var author = ""
         @State private var pages = ""
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView {
                     Form {
@@ -19,7 +20,15 @@ struct AddBookView: View {
                         TextField("Author", text: $author)
                         TextField("Pages", text: $pages)
                     }
-                    .navigationBarTitle("Add New Book", displayMode: .inline)
+                    .navigationBarTitle("Add New To-Do Item", displayMode: .inline)
+                    .navigationBarItems(trailing: Button("Save") {
+                                    if title.count > 0 && author.count > 0 {
+                                        let item = BookItem(id: UUID(), title: title,
+                                                            author: author, pages: pages)
+                                        bookList.items.append(item)
+                                        presentationMode.wrappedValue.dismiss()
+                                    }
+                                })
                 }
     }
 }

@@ -8,7 +8,22 @@
 import Foundation
 
 class BookList: ObservableObject {
-    @Published var items = [bookItem(title: "Book 1", author: "Author 1", pages: "25"),
-                            bookItem(title: "Book 2", author: "Author 2", pages: "26"),
-                            bookItem(title: "Book 3", author: "Author 3", pages: "27")]
- }
+    @Published var items : [BookItem] {
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(items) {
+                UserDefaults.standard.set(encoded, forKey: "data")
+            }
+        }
+    }
+init() {
+        if let items = UserDefaults.standard.data(forKey: "data") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([BookItem].self, from: items) {
+                self.items = decoded
+                return
+            }
+        }
+        items = []
+    }
+}
