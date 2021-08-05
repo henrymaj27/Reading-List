@@ -14,7 +14,7 @@ struct AddBookView: View {
     @State private var pages = ""
     @State private var time = ""
     @Environment(\.presentationMode) var presentationMode
-    static let time = ["Previous", "Current", "Future"]
+    static let times = ["Previous", "Current", "Future"]
     var body: some View {
         NavigationView {
             Form {
@@ -22,7 +22,7 @@ struct AddBookView: View {
                 TextField("Author", text: $author)
                 TextField("Pages", text: $pages)
                 Picker("When are you reading?", selection: $time) {
-                    ForEach(Self.time, id: \.self) { time in
+                    ForEach(Self.times, id: \.self) { time in
                         Text(time)
                     }
                 }

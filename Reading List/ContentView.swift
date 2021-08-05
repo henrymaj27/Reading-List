@@ -78,7 +78,8 @@ struct ContentView: View {
                                                             bookList.items.remove(atOffsets: indexSet)
                                                         })
                                                     }
-                                                    .navigationBarItems(leading: EditButton())
+                                                    .navigationBarTitle("Future Reads", displayMode: .inline)
+                                                    .navigationBarItems(trailing: EditButton())
                                                 }
                                             },
                                         label: {
