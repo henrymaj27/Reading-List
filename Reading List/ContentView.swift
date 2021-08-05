@@ -135,4 +135,5 @@ struct BookItem: Identifiable, Codable {
     var title = String()
     var author = String()
     var pages = String()
+    var time = String()
 }
